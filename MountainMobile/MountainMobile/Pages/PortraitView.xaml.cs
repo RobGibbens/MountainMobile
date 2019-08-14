@@ -30,7 +30,7 @@ namespace MountainMobile.Pages
         {
             InitializeComponent();
 
-            this.BindingContext = viewModel = ViewModelLocator.SlideshowViewModel;
+            BindingContext = viewModel = ViewModelLocator.SlideshowViewModel;
 
             currentHeading = Heading1;
             currentBody = Body1;
@@ -61,29 +61,30 @@ namespace MountainMobile.Pages
 
             canvas.Clear();
 
-            SKRect imageRect = new SKRect(0, 0, info.Width, info.Height);
+            var imageRect = new SKRect(0, 0, info.Width, info.Height);
 
             // render out the bitmap
-            SKRect outgoingImageRect;
-            if (transitionValue >= 1)
-                outgoingImageRect = new SKRect(0 - (float)outgoingOffset, 0, info.Width, info.Height);
-            else
-                outgoingImageRect = new SKRect(0, 0, info.Width, info.Height);
+            var outgoingImageRect = transitionValue >= 1
+                ? new SKRect(0 - (float)outgoingOffset, 0, info.Width, info.Height)
+                : new SKRect(0, 0, info.Width, info.Height);
 
             canvas.DrawBitmap(currentBitmap, outgoingImageRect, BitmapStretch.AspectFill);
 
-            if (transitionValue <= 0) return;
+            if (transitionValue <= 0)
+            {
+                return;
+            }
 
             // draw our clipping path
             if (offscreenBitmap != null)
             {
                 // animate int the rect that the image is being rendered to
-                int movementAmount = 600;
-                float offset = (float)(movementAmount - (movementAmount * (transitionValue / 2)));
-                SKRect incomingRect = new SKRect(0, 0, info.Width + offset, info.Height);
+                var movementAmount = 600;
+                var offset = (float)(movementAmount - (movementAmount * (transitionValue / 2)));
+                var incomingRect = new SKRect(0, 0, info.Width + offset, info.Height);
 
                 // draw the faded version of the image
-                using (SKPaint transparentPaint = new SKPaint())
+                using (var transparentPaint = new SKPaint())
                 {
                     var opacity = Math.Max((transitionValue - .5) * .5, 0);
                     transparentPaint.Color = transparentPaint.Color.WithAlpha((byte)(0xFF * opacity));
@@ -111,7 +112,7 @@ namespace MountainMobile.Pages
             var yPos2 = (info.Height / 2) + yDelta;
 
             // construct our path
-            SKPath path = new SKPath();
+            var path = new SKPath();
             path.MoveTo(info.Width, 0);
             path.LineTo((float)xPos, (float)yPos1);
             path.LineTo((float)xPos, (float)yPos2);
@@ -145,7 +146,9 @@ namespace MountainMobile.Pages
         {
             // see if the animation is running
             if (this.AnimationIsRunning("TransitionAnimation"))
+            {
                 return;
+            }
 
             // update the elements
             UpdateOffScreenElements();

@@ -8,57 +8,57 @@
     xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
     mc:Ignorable="d">
 
-    <Grid RowSpacing="0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-        <skia:SKCanvasView
+            <skia:SKCanvasView
             x:Name="ImageSkiaCanvas"
             HorizontalOptions="Fill"
             PaintSurface="ImageSkiaCanvas_PaintSurface"
             VerticalOptions="Fill" />
 
 
-        <Image
+            <Image
             Margin="30"
             HorizontalOptions="Start"
             Source="mountain_icon"
             VerticalOptions="Start" />
 
-        <Image
+            <Image
             Margin="30"
             HorizontalOptions="End"
             Source="hamburger"
             VerticalOptions="Start" />
 
-        <BoxView Grid.Row="1" Color="White" />
+            <BoxView Grid.Row="1" Color="White" />
 
-        <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="140" />
-            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="140" />
+                </Grid.RowDefinitions>
 
-            <Label
+                <Label
                 x:Name="Heading1"
                 Style="{StaticResource Header}"
-                Text="Öræfajökull" />
+                Text="Caribbean Cruise" />
 
-            <Label
+                <Label
                 x:Name="Body1"
                 Grid.Row="1"
                 Style="{StaticResource Body}"
-                Text="Öræfajökull is located at the southern extremity of the Vatnajökull glacier and overlooking the Ring Road between Höfn and Vík." />
+                Text="We don't have proof, but evidence suggests that the Caribbean was made for cruising. This evidence is all around you — you'll find in the Caribbean air, the sand and the water. And with more than 5,000 islands and cays spread across this amazing region, there's a lot of paradise to see. So how do you choose where to visit on a Caribbean cruise? We recommend you just go and see for yourself! Best of all, the mild climate means it doesn't even matter what time of year you go. A Carnival Caribbean cruise takes you to some of the coolest little hotspots… stretching across the world's designated hotspot." />
 
-            <Label
+                <Label
                 x:Name="Heading2"
                 Opacity="0"
                 Style="{StaticResource Header}"
                 Text="Thórsmörk" />
 
-            <Label
+                <Label
                 x:Name="Body2"
                 Grid.Row="1"
                 Opacity="0"
@@ -66,14 +66,13 @@
                 Text="Thórsmörk is a mountain ridge in Iceland that was named after the Norse god Thor (Þór). It is situated in the south of Iceland between the glaciers Tindfjallajökull and Eyjafjallajökull." />
 
 
+            </Grid>
+
+            <Grid.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Left" Swiped="SwipeGestureRecognizer_Swiped" />
+            </Grid.GestureRecognizers>
+
+
         </Grid>
-
-        <Grid.GestureRecognizers>
-            <SwipeGestureRecognizer Direction="Left" Swiped="SwipeGestureRecognizer_Swiped" />
-        </Grid.GestureRecognizers>
-
-
-    </Grid>
-
 
 </ContentView>

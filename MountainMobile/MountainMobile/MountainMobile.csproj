@@ -11,23 +11,37 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Asheville.jpg" />
     <None Remove="Images\bardarbunga.jpg" />
+    <None Remove="Images\Chicago.jpg" />
+    <None Remove="Images\Cruise.jpg" />
     <None Remove="Images\Oraefojokull.jpg" />
+    <None Remove="Images\SmokyMountains.jpg" />
+    <None Remove="Images\SouthHaven.jpg" />
+    <None Remove="Images\StLouis.jpg" />
     <None Remove="Images\Thorsmork.jpg" />
+    <None Remove="Images\TraverseCity.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Images\Asheville.jpg" />
     <EmbeddedResource Include="Images\bardarbunga.jpg" />
+    <EmbeddedResource Include="Images\Chicago.jpg" />
+    <EmbeddedResource Include="Images\Cruise.jpg" />
+    <EmbeddedResource Include="Images\SmokyMountains.jpg" />
+    <EmbeddedResource Include="Images\SouthHaven.jpg" />
+    <EmbeddedResource Include="Images\StLouis.jpg" />
     <EmbeddedResource Include="Images\Thorsmork.jpg" />
+    <EmbeddedResource Include="Images\TraverseCity.jpg" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="LiveXAML" Version="2.1.72" />
     <PackageReference Include="Refractored.MvvmHelpers" Version="1.3.0" />
     <PackageReference Include="SkiaSharp.Views.Forms" Version="1.68.0" />
-    <PackageReference Include="Xamarin.Forms" Version="4.0.0.425677" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
-    <PackageReference Include="Xamarin.Forms.DebugRainbows" Version="1.0.7" />
+    <PackageReference Include="Xamarin.Forms" Version="4.1.0.673156" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
+    <PackageReference Include="Xamarin.Forms.DebugRainbows" Version="1.0.16" />
   </ItemGroup>
 
   <ItemGroup>
